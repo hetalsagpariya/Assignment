@@ -1,0 +1,17 @@
+.animated-input {
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .animated-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+  }
+  
+  .animated-button {
+    transition: background-color 0.3s;
+  }
+  
+  .animated-button:hover {
+    background-color: #45a049;
+  }
+  
