@@ -15,8 +15,12 @@ const MainScreen = () => {
 
   const handleEdit = (id) => {
     setEditingId(id);
-    // Fetch the item data from the backend or local storage and populate the form
-    // For simplicity, we are not doing the actual fetching here
+
+    // Find the item being edited
+    const editedItem = data.find((item) => item.id === id);
+
+    // Set the item's data to the form
+    setNewItem({ ...editedItem });
   };
 
   const handleDelete = (id) => {
@@ -25,8 +29,9 @@ const MainScreen = () => {
   };
 
   const handleAdd = () => {
-    // Show the form to add a new item
+    setEditingId(null);
     setShowForm(true);
+    setNewItem({ id: '', name: '', price: '' });
   };
 
   const handleSave = () => {
@@ -37,11 +42,19 @@ const MainScreen = () => {
     }
 
     // Save the new item to the data array
-    setData([...data, newItem]);
+    if (editingId === null) {
+      // If not in editing mode, add a new item
+      setData([...data, newItem]);
+    } else {
+      // If in editing mode, update the existing item
+      const updatedData = data.map((item) => (item.id === editingId ? newItem : item));
+      setData(updatedData);
+    }
 
     // Reset the form and hide it
     setNewItem({ id: '', name: '', price: '' });
     setShowForm(false);
+    setEditingId(null);
   };
 
   const handleCancelEdit = () => {

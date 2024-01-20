@@ -66,7 +66,7 @@ To use the `ItemTable` component in your React application:
 To use the `ItemTable` component in  sidebar page link to this component with name Api-itemTable.you click this Api-itemTable so navigate our Api Integration part
 
 2. **[Loading State and Error Handling]:**
-3. **[Modal for Item Details]:**when click ant tavble content show open model item details.
+3. **[Modal for Item Details]:** :when click ant tavble content show open model item details.
 
   
 ## Another Library used in This Project
